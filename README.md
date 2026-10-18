@@ -26,5 +26,3 @@ Europe (Stockholm), `eu-north-1`
 - `VPC_Peering_Test_Results.txt` — test results
 - `VPC-Peering-Evidence/` — seven supplied screenshots
 
-## Security
-Do not commit or upload private keys (`.pem`) or credentials.

@@ -1,0 +1,6 @@
+FINAL SUBMISSION CHECKLIST
+[ ] PDF report reviewed
+[ ] Seven screenshots included in VPC-Peering-Evidence
+[ ] Configuration and test-results text files reviewed
+[ ] No .pem key, password, or credentials included
+[ ] Confirm submission instructions (PDF only, ZIP, or GitHub URL)

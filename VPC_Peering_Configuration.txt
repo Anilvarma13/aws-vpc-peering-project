@@ -1,0 +1,43 @@
+AWS VPC PEERING PROJECT — CONFIGURATION SUMMARY
+Region: Europe (Stockholm) — eu-north-1
+
+VPC-A
+- VPC ID: vpc-05d79e45930f20c75
+- CIDR: 10.0.0.0/16
+- Public subnet: Public-Subnet-A — 10.0.1.0/24 — subnet-0faf04632d8f447ea
+- Private subnet: Private-Subnet-A — 10.0.2.0/24 — subnet-08dc90bb99971e234
+- Internet Gateway: igw-0964953dbbc1cd2a4
+- Public route table: Public-RT-A — rtb-0371ab1f81f9a3ecc
+  - 10.0.0.0/16 -> local
+  - 0.0.0.0/0 -> igw-0964953dbbc1cd2a4
+  - 10.1.0.0/16 -> pcx-008dccff0cf5e2620
+- Private route table: Private-RT-A
+  - 10.0.0.0/16 -> local
+  - 10.1.0.0/16 -> pcx-008dccff0cf5e2620
+
+VPC-B
+- VPC ID: vpc-04aa68eeed7fa8d52
+- CIDR: 10.1.0.0/16
+- Private subnet: Private-Subnet-B — 10.1.1.0/24 — subnet-0cc6031a21b1ef756
+- Private route table: Private-RT-B — rtb-0092c7662724b6306
+  - 10.1.0.0/16 -> local
+  - 10.0.0.0/16 -> pcx-008dccff0cf5e2620
+
+VPC PEERING
+- Name: Peering-A-to-B
+- ID: pcx-008dccff0cf5e2620
+- Status: Active (as shown in supplied screenshot)
+
+EC2 INSTANCES
+- Bastion-VPC-A: i-0b01575a543871f11 — private IP 10.0.1.124
+- Private-Server-A: i-06743fb4af4dc3233 — private IP 10.0.2.218
+- Private-Server-B: i-0d927e2d735ec1913 — private IP 10.1.1.81
+
+CONNECTIVITY EVIDENCE
+- Ping from Bastion-VPC-A to 10.1.1.81: 4 packets received, 0% packet loss; average RTT 0.179 ms.
+- SSH through Bastion to 10.1.1.81 succeeded; hostname returned: ip-10-1-1-81.
+
+SECURITY
+- Never include or upload the .pem private key.
+- Bastion public IPv4 can change after stop/start.
+- Check current resource state before submission.

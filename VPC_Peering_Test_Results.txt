@@ -1,0 +1,20 @@
+AWS VPC PEERING PROJECT — TEST RESULTS
+
+1. VPC peering status
+Connection: Peering-A-to-B
+ID: pcx-008dccff0cf5e2620
+Observed status: Active.
+
+2. ICMP connectivity
+Command run from Windows PowerShell through Bastion:
+ssh -o BatchMode=yes -o IdentitiesOnly=yes -i "$env:USERPROFILE\Desktop\Anil\cloud-storage-key.pem" ubuntu@13.62.222.34 "ping -c 4 10.1.1.81"
+
+Observed result: 4 packets transmitted, 4 received, 0% packet loss.
+Average round-trip time: 0.179 ms.
+
+3. SSH connectivity through Bastion
+SSH ProxyCommand connection to ubuntu@10.1.1.81 completed successfully.
+Returned hostname: ip-10-1-1-81.
+
+Conclusion:
+The provided screenshots and terminal output show an Active VPC peering connection, routes in both VPCs targeting the peering connection, and successful ping and SSH connectivity to Private-Server-B.
